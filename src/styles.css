@@ -17,3 +17,9 @@ body{
    padding: 2em;
    margin-bottom: 1em;
 }
+
+.rev {
+   padding: 2em;
+   margin-bottom: 1em;
+   border-bottom: 2px solid purple;
+}

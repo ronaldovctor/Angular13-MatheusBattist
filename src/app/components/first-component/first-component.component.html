@@ -22,3 +22,14 @@
       </li>
    </ul>
 </div>
+
+<div class="rev">
+   <ul>
+      <li *ngFor="let game of games">
+         <h2 class="title">Jogo: {{ game.name }}</h2>
+         <p>Ano de lançamento: {{ game.release }}</p>
+         <p>Desenvolvedora: {{ game.developer }}</p>
+         <p>Faturamento: {{ game.money | currency:'BR':'R$ ' }}</p>
+      </li>
+   </ul>
+</div>

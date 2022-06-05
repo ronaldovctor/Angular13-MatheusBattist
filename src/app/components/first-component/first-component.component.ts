@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from 'src/app/Game';
 
 @Component({
   selector: 'app-first-component',
@@ -15,6 +16,11 @@ export class FirstComponentComponent implements OnInit {
     brand: 'Ford',
     year: 2022
   }
+
+  games: Game[] = [
+    { name: 'The Witcher 3', release: 2015, developer: 'CD Projekt Red', money: 120000000 },
+    { name: 'CS: GO', release: 2012, developer: 'Valve', money: 780000000 }
+  ]
 
   constructor() { }
 
