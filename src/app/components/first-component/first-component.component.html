@@ -30,6 +30,11 @@
          <p>Ano de lançamento: {{ game.release }}</p>
          <p>Desenvolvedora: {{ game.developer }}</p>
          <p>Faturamento: {{ game.money | currency:'BR':'R$ ' }}</p>
+         <button (click)="edit()">Edit Game</button>
+         <div *ngIf="showEdit">
+            <input type="text" [(ngModel)]="game.name">
+            <button (click)="edit()">Cancelar</button>
+         </div>
       </li>
    </ul>
 </div>

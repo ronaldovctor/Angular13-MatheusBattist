@@ -7,6 +7,8 @@ import { Game } from 'src/app/Game';
   styleUrls: ['./first-component.component.css']
 })
 export class FirstComponentComponent implements OnInit {
+  showEdit!: boolean
+
   name: string = 'Ronaldo'
   age: number = 21
   job: string = 'Programador'
@@ -25,6 +27,10 @@ export class FirstComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  edit(): void {
+    this.showEdit = !this.showEdit
   }
 
 }
