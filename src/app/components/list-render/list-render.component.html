@@ -8,4 +8,12 @@
       </li>
    </ul>
    <h3>{{animalDetails}}</h3>
+   <h2>Cars:</h2>
+   <ul>
+      <li *ngFor="let car of cars">
+         <p>Nome: {{ car.name }}</p>
+         <button (click)="showBrand(car)">Show Brand</button>
+      </li>
+   </ul>
+   <h3>{{carDetails}}</h3>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from 'src/app/Animal';
+import { Car } from 'src/app/Car';
 import { ListService } from 'src/app/service/list.service';
 
 @Component({
@@ -10,11 +11,14 @@ import { ListService } from 'src/app/service/list.service';
 export class ListRenderComponent implements OnInit {
 
   animals: Animal[] = []
+  cars: Car[] = []
 
   animalDetails!: string
+  carDetails!: string
 
   constructor(private listService: ListService) {
     this.getAnimals()
+    this.getCars()
   }
 
   ngOnInit(): void {
@@ -24,6 +28,10 @@ export class ListRenderComponent implements OnInit {
     this.animalDetails = `This animal is ${animal.age} years old.`
   }
 
+  showBrand(car: Car): void {
+    this.carDetails = `This car is from ${car.brand}.`
+  }
+
   removeAnimal(animal: Animal): void {
     console.log('Removendo animal...')
     this.animals = this.listService.remove(this.animals, animal)
@@ -31,5 +39,9 @@ export class ListRenderComponent implements OnInit {
 
   getAnimals(): void {
     this.listService.getAll().subscribe(animals => this.animals = animals)
+  }
+
+  getCars(): void {
+    this.listService.getAllC().subscribe(cars => this.cars = cars)
   }
 }
