@@ -13,8 +13,8 @@ export class ListService {
 
   constructor(private http: HttpClient) { }
 
-  remove(animals: Animal[], animal: Animal) {
-    return animals.filter((x) => animal.name !== x.name)
+  remove(id: number) {
+    return this.http.delete<Animal>(`${this.apiUrlAnimals}/${id}`)
   }
 
   getAll(): Observable<Animal[]> {
